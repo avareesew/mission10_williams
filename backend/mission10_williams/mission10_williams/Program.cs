@@ -9,6 +9,7 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddCors();
 
 builder.Services.AddDbContext<Mission10Context>(options =>
 options.UseSqlite(builder.Configuration["ConnectionStrings:BowlerConnection"]));
@@ -23,6 +24,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.UseCors(p => p.WithOrigins("http://localhost:3000"));
 
 app.UseHttpsRedirection();
 

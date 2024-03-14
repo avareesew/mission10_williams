@@ -1,9 +1,9 @@
+//this is my really basic header component that explains what the page is
 function Header() {
   return (
-    <header className="row">
-      <div className="col-4">
-        <h1>Welcoem to the Bowlers Page</h1>
-      </div>
+    <header className="row text-center">
+      <h1>Welcome to the Bowling League Page!</h1>
+      <h5>Shark and Marlins Team Members:</h5>
     </header>
   );
 }
